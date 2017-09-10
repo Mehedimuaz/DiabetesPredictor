@@ -4,8 +4,9 @@
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
+!/app/build/outputs/apk
 /build
 /captures
 .externalNativeBuild
-*app/build/outputs/apk
 app/libs/
+!/.gitignore
