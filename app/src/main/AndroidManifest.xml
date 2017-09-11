@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PredictionResult"></activity>
+        <activity android:name=".PredictionResult" />
+        <activity
+            android:name=".TestResult"
+            android:label="@string/title_activity_test_result"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

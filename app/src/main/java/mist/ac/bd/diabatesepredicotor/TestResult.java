@@ -1,10 +1,8 @@
 package mist.ac.bd.diabatesepredicotor;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,44 +12,30 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
-import junit.framework.Test;
-
-public class Home extends AppCompatActivity
+public class TestResult extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private Spinner mGender;
-    private Spinner mDiabatics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_test_result);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.app_name);
 
-        mGender = (Spinner) findViewById(R.id.gender);
-        mDiabatics = (Spinner) findViewById(R.id.diabatics);
-
-        ArrayAdapter<String> gender = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item);
-        gender.add("Select your gender");
-        gender.add("Male");
-        gender.add("Female");
-        mGender.setAdapter(gender);
-
-        ArrayAdapter<String> diabetics = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item);
-        diabetics.add("Family member with diabetes");
-        diabetics.add("None");
-        diabetics.add("Father");
-        diabetics.add("Mother");
-        diabetics.add("Both");
-        mDiabatics.setAdapter(diabetics);
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -72,7 +56,7 @@ public class Home extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.test_result, menu);
         return true;
     }
 
@@ -114,10 +98,5 @@ public class Home extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void clickedOnPredict(View view) {
-        Intent intent = new Intent(Home.this, TestResult.class);
-        startActivity(intent);
     }
 }
